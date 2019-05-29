@@ -20,7 +20,7 @@
     </div>
     <?php } ?>
     <?php foreach ($rows as $row) { ?>
-    <div class="row">
+<!--     <div class="row">
       <?php foreach ($row as $dashboard_1) { ?>
       <?php $class = 'col-lg-' . $dashboard_1['width'] . ' col-md-3 col-sm-6 cols'; ?>
       <?php foreach ($row as $dashboard_2) { ?>
@@ -30,7 +30,7 @@
       <?php } ?>
       <div class="<?php echo $class; ?>"><?php echo $dashboard_1['output']; ?></div>
       <?php } ?>
-    </div>
+    </div> -->
     <?php } ?>
 	
   </div>
