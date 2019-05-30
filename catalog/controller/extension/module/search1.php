@@ -210,6 +210,21 @@ class ControllerExtensionModuleSearch1 extends Controller {
 		}
 
 
+				if (isset($this->request->get['filter_name'])) {
+
+
+			$filter_name = $this->request->get['filter_name'];
+
+
+		} else {
+
+
+			$filter_name = null;
+
+
+		}
+
+
 
 
 
@@ -456,6 +471,15 @@ class ControllerExtensionModuleSearch1 extends Controller {
 
 
 			}
+
+		if (isset($this->request->get['filter_name'])) {
+
+
+				$url .= '&filter_name=' . $this->request->get['filter_name'];
+
+
+			}
+
 
 
 			
@@ -710,6 +734,7 @@ class ControllerExtensionModuleSearch1 extends Controller {
 		$data['filter_bath_rooms'] = $filter_bath_rooms;
 
 
+		$data['filter_name'] = $filter_name;
 		
 
 

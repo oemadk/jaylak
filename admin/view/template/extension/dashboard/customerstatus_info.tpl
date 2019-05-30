@@ -13,6 +13,7 @@
 					  <td class="text-left"><?php echo $column_name; ?></td>
 					  <td class="text-left"><?php echo $column_property_status; ?></td>
 					  <td class="text-left"><?php echo $column_price; ?></td>
+					  <td class="text-left"><?php echo 'User Type' ?></td>
 					  <td class="text-left"><?php echo $column_status; ?></td>
 					  <td class="text-right"><?php echo $column_view; ?></td>
 					</tr>
@@ -30,6 +31,7 @@
 					  <td class="text-left"><?php echo $property['name']; ?></td>
 					  <td class="text-left"><?php echo $property['property_status']; ?></td>
 					  <td class="text-left"><?php echo $property['price']; ?></td>
+					  <td class="text-left"><?php echo $property['status']; ?></td>
 					  <td class="text-left"><?php echo $property['status']; ?></td>
 					<td class="text-right"><a href="<?php echo $property['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
 								<?php if ($property['approve']) { ?>

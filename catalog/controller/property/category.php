@@ -127,6 +127,26 @@
 
 
 
+		if (isset($this->request->get['filter_name'])){
+
+
+
+			$filter_name = $this->request->get['filter_name'];
+
+
+
+		}else{
+
+
+
+			$filter_name = false;
+
+
+
+		}
+
+
+
 		
 
 
@@ -493,6 +513,11 @@
 				$url .= '&filter_city=' . $this->request->get['filter_city'];
 			}
 
+
+						if (isset($this->request->get['filter_name'])) {
+				$url .= '&filter_name=' . $this->request->get['filter_name'];
+			}
+
 			if (isset($this->request->get['filter_address'])) {
 				$url .= '&filter_address=' . $this->request->get['filter_address'];
 			}
@@ -555,6 +580,7 @@
 			'filter_zone_id'          	 	=> $filter_zone_id,
 			'filter_bed_rooms'           	=> $filter_bed_rooms,
 			'filter_bath_rooms'           	=> $filter_bath_rooms,
+			'filter_name'           	=> $filter_name,
 			'area_from'	           			=> $area_from,
 			'area_to'	           			=> $area_to,
 			'range_from'	           			=> $range_from,

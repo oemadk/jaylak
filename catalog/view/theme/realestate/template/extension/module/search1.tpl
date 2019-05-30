@@ -3,14 +3,25 @@
 <link rel="stylesheet" href="catalog/view/theme/realestate/stylesheet/realfilter/ion.rangeSlider.skinFlat.css" />
 <script type="text/javascript" src="catalog/view/theme/realestate/realfilter/ion.rangeSlider.min.js"></script>
 <!--1st Search code start here-->
-<div class="form-set">
+<div style="min-height: auto; display: relative;" class="form-set">
+
+	<style>
+
+</style>
+
+
 	<!-- slider_search start here -->
-	<div class="main-form post">
+	<div class="main-form post" style="position: relative;">
 		<div class="container">
-			<div class="search_heading">
-				<h4><?php echo $findproperty_findproperty?> <i class="fa fa-search"></i></h4><span class="triangle"></span>
-			</div>
+
 			<form class="form-horizontal" enctype="multipart/form-data" method="post">
+							<div class="search_heading">
+				<h4><?php echo $findproperty_findproperty?> <i class="fa fa-search"></i></h4><span class="triangle"></span>
+
+		<input  style="display: inline-block;" type="text" name="filter_name" value="<?php echo $filter_name; ?>" placeholder="search" id="input-name" class="form-control" />
+
+			</div>
+			<div id="demo" class="collapse">
 				<div class="form-group">
 					<div class="col-sm-3 col-xs-12">
 						<select class="form-control" name="filter_propertystatus" >
@@ -115,12 +126,30 @@
 						</select>
 						</div>
 					</div>
-					
-						<button  class="btn button_search1 text-right" type="button" id="button-filter"><i class="fa fa-search"></i> <?php echo $button_search;?> </button>
+
+			</div>
+
+<div class="row">
+
+	<div class="col-md-6 col-lg-6 col-sm-12">
+			<button style="width: 100%"   class="btn button_search1 text-center" type="button"  data-toggle="collapse" data-target="#demo" ><i class="fa fa-plus-circle"></i> Advanced</button>
+	</div>
+	    <div class="col-md-auto">
+    </div>
+	<div class="col-md-6 col-lg-6 col-sm-12">
+								<button style="width: 100%"  class="btn button_search1 text-left" type="button" id="button-filter"><i class="fa fa-search"></i> <?php echo $button_search;?> </button>
+	</div>				
+</div>
+
+
+
+						
 				</form>
 			</div>
 	</div>
 </div>
+
+
 <!--1st Search code start here-->	
 <!--checkbox js -->
 
@@ -157,7 +186,10 @@
 $('#button-filter').on('click', function() {
 		url = 'index.php?route=property/category';
 		
-		
+		var filter_name = $('input[name=\'filter_name\']').val();
+		if (filter_name) {
+			url += '&filter_name=' + encodeURIComponent(filter_name);
+		}
 		var filter_propertystatus = $('select[name=\'filter_propertystatus\']').val();
 		
 		if (filter_propertystatus != '*') {
@@ -297,6 +329,7 @@ $('select[name=\'filter_country_id\']').on('change', function() {
 });
 
 $('select[name=\'country_id\']').trigger('change');
+
 
 
 $('.collapse').on('shown.bs.collapse', function(){

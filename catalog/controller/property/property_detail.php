@@ -175,6 +175,9 @@ class ControllerPropertyPropertyDetail extends Controller {
 
 					'propertyagent'	=> $propertyagent,
 
+					'contact'	=> $property_agent['contact'],
+
+
 
 
 					'facebook'  => $property_agent['facebook'],

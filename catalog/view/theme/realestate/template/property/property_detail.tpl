@@ -28,7 +28,25 @@
                 <div class="col-sm-6">
                     <ul class="list-unstyled pull-right">
                         <li><b><?php echo $propertydetails_price;?></b> <span class="price-amount"><?php echo $price;?></span></li>
-                        <li><b><?php echo $text_type; ?></b> <span class="price-amount">Rent</span></li>          
+                        <li><b><?php echo $text_type; ?></b> <span class="price-amount">Rent</span></li>         
+
+	           <?php if(!empty($customfieldsdetail)) { ?>
+     					<?php foreach($customfieldsdetail  as $showdata){ ?>
+
+						 	<?php if (is_array($showdata['val'])) { ?>
+						 		<?php foreach($showdata['val']  as $showdataval){ ?>  
+							<?php echo $showdataval; ?> 
+                          <?php  }   ?>
+
+                        	<?php } else {  ?>
+                        
+					                        <li><b>Unit Code:</b><span class="price-amount">	<?php echo $showdata['val']?> </span></li>
+	
+						 
+                        	<?php }  ?>
+						<?php }  ?>
+
+				<?php } ?>
                     </ul>
                 </div>	
             </div>
@@ -145,7 +163,7 @@
         <?php echo $content_bottom; ?></div>
 		<div class="col-sm-4 hidden-xs">
 		<!--agent code start here-->
-        <div class="hide">
+        <div>
 		<?php if(!empty($propertycontactagent)){?>
 		<div class="ouragents">
 		  <h2><?php echo $propertydetails_contact; ?></h2>
@@ -194,6 +212,7 @@
 					<div class="modal-content">
 						<span class="close1"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></span>
 						<div  class="boxmodal">
+
 				        <form class="form" method="post"  id="formproperty">
 						  <fieldset>
 						  <h4><?php echo $popupmessage_sendmsg; ?></h4>
@@ -201,6 +220,8 @@
 						      <input type="text" name="nameagent" id="name" class="form-control" placeholder="<?php echo $entry_name; ?>">
 							  <div id="val-c"></div>
 				          </div>
+				          				  <!-- <div><?php echo $agent['contact'];?></div> -->
+
 				  		  <input type="hidden" name="property_id" value="<?php echo $property_id;?>" id="property_id">
 						  <input type="hidden" name="property_agent_id" value="<?php echo $property_agent_id;?>" id="property_id">
 						 <div class="form-group required">
@@ -212,8 +233,14 @@
 							<div id="val-d"></div>
 				        </div>
 						<div class="buttons">
-						   <div class="pull-right">
+						   <div style="text-align: center;" class="pull-center">
 				               <button class="btn btn-primary" rel="<?php echo $property_agent_id;?>"  value="" type="button" id="enquerybutton"><?php echo $button_submit; ?></button>
+							</div>
+							<div style="text-align: center;">OR</div>
+													   <div style="text-align: center;" >
+				            <!--    <button style="background-color: #90EE90	!important;" class="btn btn" rel="<?php echo $property_agent_id;?>"  value="" type="button"><?php echo 'Call Now'.' '.$agent['contact']; ?></button> -->
+
+<a style="color: white; " class="btn btn-primary" href="tel:<?php echo $agent['contact']; ?>"><?php echo 'Call Now:'.' '.$agent['contact']; ?></a>
 							</div>
 						  </div>
 					    </fieldset>
@@ -232,9 +259,7 @@
 			</div>
            <?php } ?>
          </div>
-         <div class="right-sidebar-main">
-          <?php echo $column_footer5; ?>
-         </div>
+
 			</div>
 		</div>
     </div>
