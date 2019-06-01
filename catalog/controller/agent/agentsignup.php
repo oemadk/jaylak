@@ -645,6 +645,32 @@ class ControlleragentAgentsignup  extends Controller {
 		}
 
 
+		if (isset($this->request->post['agent_type'])) {
+
+
+
+
+
+			$data['agent_type'] = $this->request->post['agent_type'];
+
+
+
+
+
+		} else {
+
+
+
+
+
+			$data['agent_type'] = 'error';
+
+
+
+
+
+		}
+
 
 
 

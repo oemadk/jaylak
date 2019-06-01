@@ -23,6 +23,22 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
     	<form method="post" enctype="multipart/form-data" class="form-horizontal">
+
+
+
+    				   	<div class="form-group">
+				<label class="col-sm-2 control-label" for="input-plans"><?php echo 'Agent Type' ?></label>
+				<div class="col-sm-10">
+					<select name="agent_type" id="input-agenttype" class="form-control">
+						<option value="">Select Agent Type</option>
+						<option value="freelancer" selected="selected">Freelancer</option>
+						<option value="customer">Customer</option>
+					</select>
+			
+				</div>
+			</div>
+
+
 			<div class="form-group required">
 				<label class="col-sm-2 control-label" for="input-agentname"><?php echo $text_agent; ?></label>
 				<div class="col-sm-10">

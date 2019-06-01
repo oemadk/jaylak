@@ -31,7 +31,7 @@
 					  <td class="text-left"><?php echo $property['name']; ?></td>
 					  <td class="text-left"><?php echo $property['property_status']; ?></td>
 					  <td class="text-left"><?php echo $property['price']; ?></td>
-					  <td class="text-left"><?php echo $property['status']; ?></td>
+					  <td class="text-left"><?php echo $property['agent_id']; ?></td>
 					  <td class="text-left"><?php echo $property['status']; ?></td>
 					<td class="text-right"><a href="<?php echo $property['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
 								<?php if ($property['approve']) { ?>

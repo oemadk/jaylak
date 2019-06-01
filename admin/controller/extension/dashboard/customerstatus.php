@@ -57,6 +57,16 @@ class ControllerExtensionDashboardCustomerstatus extends Controller {
 
 			}
 
+			if ($result['property_agent_id']){
+				$agentID = $result['property_agent_id'];
+		if(isset($agentID)) {
+			$agent_info = $this->model_property_property->getAgent($agentID);
+			$agentType = $agent_info['agent_type'];
+		}
+			}else{
+				$agentID = 0;
+			}
+
 
 			if (is_file(DIR_IMAGE . $result['image'])){
 
@@ -95,6 +105,8 @@ class ControllerExtensionDashboardCustomerstatus extends Controller {
 
 
 				'property_status' 	=>$property_status,
+
+				'agent_id' => $agentType,
 
 
 				'image' 			=> $image,

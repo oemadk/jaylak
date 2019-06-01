@@ -3,11 +3,14 @@ class Modelagentagent extends Model {
 
 	public function addAgent($data){
 
-		$sql="INSERT INTO " . DB_PREFIX . "property_agent set agentname='".$this->db->escape($data['agentname'])."',image='".$this->db->escape($data['image'])."',
+		$sql="INSERT INTO " . DB_PREFIX . "property_agent set agentname='".$this->db->escape($data['agentname'])."',image='".$this->db->escape($data['image']).
 
-		description='".$this->db->escape($data['description'])."',positions='".$this->db->escape($data['positions'])."',email='".$this->db->escape($data['email'])."',
+			"',agent_type='".$this->db->escape($data['agent_type']).
 
-		facebook='".$this->db->escape($data['facebook'])."',twitter='".$this->db->escape($data['twitter'])."',googleplus='".$this->db->escape($data['googleplus'])."',
+		"',description='".$this->db->escape($data['description']).
+		"',positions='".$this->db->escape($data['positions']).
+		"',email='".$this->db->escape($data['email']).
+		"',facebook='".$this->db->escape($data['facebook'])."',twitter='".$this->db->escape($data['twitter'])."',googleplus='".$this->db->escape($data['googleplus'])."',
 
 		pinterest='".$this->db->escape($data['pinterest'])."',instagram='".$this->db->escape($data['instagram'])."',contact='".$this->db->escape($data['contact'])."',plans_id='".(int) $data['plans_id']."',country_id='".(int) $data['country_id']."',pincode='".$this->db->escape($data['pincode'])."',	zone_id='".(int) $data['zone_id']."',
 
