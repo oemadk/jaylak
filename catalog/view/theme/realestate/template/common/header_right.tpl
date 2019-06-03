@@ -69,10 +69,16 @@
 				<?php if ($logged) { ?>
 				<li><i class="fa fa-user"></i> <a href="<?php echo $account; ?>"><?php echo $text_logged; ?></a></li>
 				<li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-				<?php } else { ?>
+				<li><a href="<?php echo $logout; ?>"><?php echo 'Add Property'; ?></a></li>
+				<?php } 
+
+
+				else { ?>
 				<li><i class="fa fa-user"></i> <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a> </li>
 				<li><a href="<?php echo $agentsignup; ?>"><?php echo $text_register; ?></a></li>
 				<?php } ?>
+				<li><a href="<?php echo $logout; ?>"><?php echo 'Add Property'; ?></a></li>
+				
 			</ul>
 			<ul class="list-inline pull-right">
 				<li>

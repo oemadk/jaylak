@@ -1789,13 +1789,40 @@ class ControllerPropertyProperty extends Controller {
 
 		}	elseif (isset($property_info['property_agent_id'])){
 
+				$this->load->model('property/agent');
+
+			$agent_info2=$this->model_property_agent->getAgent($property_info['property_agent_id']);
+
+			if($agent_info2['agent_type'] == 'customer'){
+			$data['property_agent_id'] = '';		
+			}else{
 			$data['property_agent_id'] = $property_info['property_agent_id'];
+				
+			}
+
 
 		} else {
 
 			$data['property_agent_id'] = '';		
 
 		}
+
+		// if(!empty($data['property_agent_id'])){	
+
+		// 	$this->load->model('property/agent');
+
+		// 	$agent_info=$this->model_property_agent->getAgent($data['property_agent_id']);
+
+		// 	$data['agent']=$agent_info['agentname'];
+
+		// } else {
+
+		// 	$data['agent']='';
+
+		// }
+
+
+		//hena ahoooo e3mel condition yetcheck eza kan customer or not, if customer then agent field will be empty
 
 		$this->load->model('property/units');
 
@@ -1832,7 +1859,7 @@ class ControllerPropertyProperty extends Controller {
 
 		}
 
-		/*if(!empty($data['property_agent_id'])){	
+		if(!empty($data['property_agent_id'])){	
 
 			$this->load->model('property/agent');
 
@@ -1844,7 +1871,7 @@ class ControllerPropertyProperty extends Controller {
 
 			$data['agent']='';
 
-		}*/
+		}
 
 
 

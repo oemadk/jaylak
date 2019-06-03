@@ -488,6 +488,25 @@ class ControllerAgentagent extends Controller{
 
 		}
 
+
+	if (isset($this->request->get['filter_agenttype'])){
+
+
+
+			$filter_agenttype = $this->request->get['filter_agenttype'];
+
+
+
+		} else {
+
+
+
+		$filter_agenttype = false;
+
+
+
+		}
+
 		if (isset($this->request->get['filter_email'])){
 
 
@@ -675,6 +694,18 @@ class ControllerAgentagent extends Controller{
 
 		}
 
+				if (isset($this->request->get['filter_agenttype'])){
+
+
+
+			$url .= '&filter_agenttype=' . $this->request->get['filter_agenttype'];
+
+
+
+		}
+
+		
+
 
 
 		if (isset($this->request->get['filter_status'])){
@@ -822,6 +853,9 @@ class ControllerAgentagent extends Controller{
 
 
 			'filter_agentname' => $filter_agentname,
+
+			'filter_agenttype' => $filter_agenttype,
+
 			'filter_email' => $filter_email,
 
 
@@ -854,7 +888,10 @@ class ControllerAgentagent extends Controller{
 
 
 
-			if (!$result['approved']) {
+					if($result['agent_type']=='customer'){
+						// echo "not with us";
+					}else{
+									if (!$result['approved']) {
 
 				$approve = $this->url->link('agent/agent/approve', 'token=' . $this->session->data['token'] . '&property_agent_id=' . $result['property_agent_id'] . $url, true);
 
@@ -957,6 +994,7 @@ class ControllerAgentagent extends Controller{
 
 
 			);
+					}
 
 
 

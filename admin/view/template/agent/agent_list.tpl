@@ -27,9 +27,11 @@
    </div>
 </div>
 <div class="panel panel-default">
-   <div class="panel-heading">
-      <h3 class="panel-title"><i class="fa fa-list"></i> <?php echo $text_list; ?></h3>
-   </div>
+   <div style="text-align: center;" class="panel-heading">
+      <a href="index.php?route=agent/agent&token=<?php echo $token; ?>&filter_agenttype=freelancer" style="padding-right: 20px" class="panel-title"><i class="fa fa-list"></i> <?php echo 'Show Freelancers'; ?></a>
+      <a href="index.php?route=agent/agent&token=<?php echo $token; ?>&filter_agenttype=agent" style="padding-right: 20px" class="panel-title"><i class="fa fa-list"></i> <?php echo 'Show Agents'; ?></a>
+      <!-- <a href="index.php?route=agent/agent&token=<?php echo $token; ?>&filter_agenttype=customer" style="padding-right: 20px" class="panel-title"><i class="fa fa-list"></i> <?php echo 'Show Customers'; ?></a> -->
+=   </div>
    <div class="panel-body">
       <div class="well">
          <div class="row">
@@ -186,3 +188,32 @@
    
 </script>
 
+
+
+<script type="text/javascript">
+   $('#button-new').on('click', function() {
+      
+      var url = 'index.php?route=agent/agent&token=<?php echo $token; ?>';
+   
+      var filter_agentname = $('input[name=\'filter_agentname\']').val();
+   
+      if (filter_agenttype) {
+         url += '&filter_agenttype=' + encodeURIComponent(filter_agentname);
+      }
+
+      var filter_email = $('input[name=\'filter_email\']').val();
+   
+      if (filter_email) {
+         url += '&filter_email=' + encodeURIComponent(filter_email);
+      }
+      
+      var filter_status = $('select[name=\'filter_status\']').val();
+   
+      if (filter_status != '*') {
+         url += '&filter_status=' + encodeURIComponent(filter_status);
+      }
+   
+     location = url;
+   });
+   
+</script>

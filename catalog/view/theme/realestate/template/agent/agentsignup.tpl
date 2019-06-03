@@ -27,22 +27,19 @@
 
 
     				   	<div class="form-group">
-				<label class="col-sm-2 control-label" for="input-plans"><?php echo 'Agent Type' ?></label>
+				<label class="col-sm-2 control-label" for="input-plans"><?php echo 'Type' ?></label>
 				<div class="col-sm-10">
-					<select name="agent_type" id="input-agenttype" class="form-control">
-						<option value="">Select Agent Type</option>
-						<option value="freelancer" selected="selected">Freelancer</option>
-						<option value="customer">Customer</option>
-					</select>
-			
+
+  <input id="input-agenttype"  type="radio" name="agent_type" value="freelancer"> Freelancer<br>
+  <input id="input-agenttype" type="radio" name="agent_type" value="customer"> Customer<br>
 				</div>
 			</div>
 
 
 			<div class="form-group required">
-				<label class="col-sm-2 control-label" for="input-agentname"><?php echo $text_agent; ?></label>
+				<label class="col-sm-2 control-label" for="input-agentname"><?php echo 'Full Name'; ?></label>
 				<div class="col-sm-10">
-					<input type="text" name="agentname" value="<?php echo $agentname;?>" placeholder="<?php echo $entry_agent; ?>" id="input-agentname" class="form-control" />
+					<input type="text" name="agentname" value="<?php echo $agentname;?>" placeholder="Full Name" id="input-agentname" class="form-control" />
 					<?php if ($error_agentname) { ?>
 					<div class="text-danger"><?php echo $error_agentname; ?></div>
 					<?php } ?>

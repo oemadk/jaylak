@@ -16,6 +16,91 @@ class ModelPropertyAgent extends Model{
 
 
 
+	public function getAgents2($data){
+
+		$sql="select * from " . DB_PREFIX . "property_agent where property_agent_id<>0";
+
+		if (isset($data['filter_agentname'])){
+
+			$sql .=" and agentname like '".$this->db->escape($data['filter_agentname'])."%'";
+
+		}
+		if (isset($data['filter_email'])){
+
+			$sql .=" and email like '".$this->db->escape($data['filter_email'])."%'";
+
+		}
+
+		$data['filter_agenttype'] = 'customer';
+
+			$sql .=" and agent_type like '".$this->db->escape($data['filter_agenttype'])."%'";
+
+		
+
+		if (isset($data['filter_status'])){
+
+			$sql .=" and status like '".$this->db->escape($data['filter_status'])."%'";
+
+		}
+
+		$sort_data = array(
+
+			'agentname',
+
+			'status'
+
+		);
+
+		if (isset($data['sort']) && in_array($data['sort'], $sort_data)){
+
+			$sql .= " ORDER BY " . $data['sort'];
+
+		}else{
+
+			$sql .= " ORDER BY agentname";
+
+		}if (isset($data['order']) && ($data['order'] == 'DESC')){
+
+			$sql .= " DESC";
+
+		} 
+
+		else {
+
+			$sql .= " ASC";
+
+		}
+
+		if(isset($data['start']) || isset($data['limit'])) {
+
+		if ($data['start'] < 0) 
+
+		{
+
+			$data['start'] = 0;
+
+		}
+
+
+
+		if ($data['limit'] < 1) 
+
+		{
+
+			$data['limit'] = 20;
+
+		}
+
+			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+
+		}
+
+		$query = $this->db->query($sql);
+
+		return $query->rows;	
+
+	}
+
 	public function getAgents($data){
 
 		$sql="select * from " . DB_PREFIX . "property_agent where property_agent_id<>0";
@@ -30,6 +115,12 @@ class ModelPropertyAgent extends Model{
 			$sql .=" and email like '".$this->db->escape($data['filter_email'])."%'";
 
 		}
+
+				if (isset($data['filter_agenttype'])){
+
+			$sql .=" and agent_type like '".$this->db->escape($data['filter_agenttype'])."%'";
+
+		} 
 
 		if (isset($data['filter_status'])){
 

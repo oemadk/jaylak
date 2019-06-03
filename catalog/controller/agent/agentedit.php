@@ -37,7 +37,7 @@ class Controlleragentagentedit extends Controller {
 			
 
 
-			$this->response->redirect($this->url->link('agent/updatesuccess'));
+			$this->response->redirect($this->url->link('agent/viewagent'));
 
 
 		}

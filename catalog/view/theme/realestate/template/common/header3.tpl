@@ -90,9 +90,15 @@
 				<?php if ($logged) { ?>
 				<li><i class="fa fa-user" aria-hidden="true"></i> <a href="<?php echo $account; ?>"><?php echo $text_logged; ?></a></li>
 				<li><i class="fa fa-key" aria-hidden="true"></i> <a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+				<li><i class="fa fa-user" aria-hidden="true"></i> <a href="index.php?route=agent/property"><?php echo 'Add Property'; ?></a></li>
+				
+
 				<?php } else { ?>
 				<li><i class="fa fa-unlock-alt" aria-hidden="true"></i> <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a> </li>
 				<li><i class="fa fa-key" aria-hidden="true"></i> <a href="<?php echo $agentsignup; ?>"><?php echo $text_register; ?></a></li>
+
+				<li><i class="fa fa-user" aria-hidden="true"></i> <a href="<?php echo $agentsignup; ?>"><?php echo 'Add Property'; ?></a></li>
+
 				<?php } ?>
 			</ul>
 			<ul class="list-inline pull-right">

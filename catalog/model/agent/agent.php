@@ -226,6 +226,13 @@ class Modelagentagent extends Model {
 			$sql .=" and agentname like '".$this->db->escape($data['filter_agentname'])."%'";
 
 		}
+				if(isset($data['filter_agenttype'])){
+			$sql .=" and agent_type like '".$this->db->escape($data['filter_agenttype'])."%'";
+
+		}
+
+
+		
 
 		if(isset($data['filter_status'])){
 
@@ -236,6 +243,9 @@ class Modelagentagent extends Model {
 		$sort_data = array(
 
 			'agentname',
+
+			'agent_type',
+
 
 			'status'
 

@@ -619,7 +619,7 @@ class ControllerCommonColumnLeft extends Controller {
 				if ($this->user->hasPermission('access', 'agent/agent')) {
 				$agent[] = array(
 
-					'name'	   => $this->language->get('text_agent'),
+					'name'	   => 'Agents & Freelancers',
 
 					'href'     => $this->url->link('agent/agent', 'token=' . $this->session->data['token'], true),
 
@@ -632,7 +632,7 @@ class ControllerCommonColumnLeft extends Controller {
 			if ($this->user->hasPermission('access', 'agent/mail')) {
 				$agent[] = array(
 
-					'name'	   => $this->language->get('text_mail'),
+					'name'	   => 'Customers',
 
 					'href'     => $this->url->link('agent/mail', 'token=' . $this->session->data['token'], true),
 
@@ -641,6 +641,11 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 
 			}
+
+
+
+
+			
 
 			if ($agent) {
 

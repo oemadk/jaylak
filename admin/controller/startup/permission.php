@@ -127,7 +127,10 @@ class ControllerStartupPermission extends Controller {
 				'error/not_found',
 
 
-				'error/permission'
+				'error/permission',
+
+
+				'agent/customerlist'
 
 
 			);

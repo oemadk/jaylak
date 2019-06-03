@@ -40,7 +40,7 @@
 
                         	<?php } else {  ?>
                         
-					                        <li><b>Unit Code:</b><span class="price-amount">	<?php echo $showdata['val']?> </span></li>
+					                        <li style="display: inline-block;"><b>Unit Code:</b><span class="price-amount">	<?php echo $showdata['val']?> </span></li>
 	
 						 
                         	<?php }  ?>
@@ -207,40 +207,62 @@
 				</div>
 				<!--modal code start here-->
 				<div class="enquerydiv">
-				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="contactnow">
-				  <div class="modal-dialog modal-sm">
-					<div class="modal-content">
+				<div style="border-radius: 40px; padding: 0px;" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="contactnow">
+				  <div style="border-radius: 40px; padding: 0px;"  class="modal-dialog modal-md">
+					<div style="border-radius: 40px; padding:0px;" class="modal-content">
 						<span class="close1"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></span>
-						<div  class="boxmodal">
+						<div style="border-radius: 20px;"  class="boxmodal">
 
 				        <form class="form" method="post"  id="formproperty">
-						  <fieldset>
-						  <h4><?php echo $popupmessage_sendmsg; ?></h4>
-						  <div class="form-group required">
+						  <fieldset style="    border-color: transparent;
+">
+						  <h4 style="    border: medium none;
+    color: #F79B0B;
+    font-size: 24px;
+    margin: 58px 0 48px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;"><?php echo $popupmessage_sendmsg; ?></h4>
+
+    <div class="col-sm-6">
+    							  <div class="form-group required">
 						      <input type="text" name="nameagent" id="name" class="form-control" placeholder="<?php echo $entry_name; ?>">
 							  <div id="val-c"></div>
 				          </div>
+
+    </div>
+
 				          				  <!-- <div><?php echo $agent['contact'];?></div> -->
 
 				  		  <input type="hidden" name="property_id" value="<?php echo $property_id;?>" id="property_id">
 						  <input type="hidden" name="property_agent_id" value="<?php echo $property_agent_id;?>" id="property_id">
-						 <div class="form-group required">
+
+						  <div class="col-sm-6">
+						  							 <div class="form-group required">
 							<input type="text" name="emailagent" value="" class="form-control" placeholder="<?php echo $entry_email; ?>" id="emailagent">
 							<div id="val-e"></div>
 				        </div>
-						<div class="form-group required">
+						  </div>
+<div class="col-sm-12">
+							<div class="form-group required">
 							<textarea name="description" rows="10" id="description"  class="form-control" placeholder="<?php echo $entry_msg; ?>"></textarea>
 							<div id="val-d"></div>
 				        </div>
+</div>
+
 						<div class="buttons">
 						   <div style="text-align: center;" class="pull-center">
-				               <button class="btn btn-primary" rel="<?php echo $property_agent_id;?>"  value="" type="button" id="enquerybutton"><?php echo $button_submit; ?></button>
-							</div>
-							<div style="text-align: center;">OR</div>
-													   <div style="text-align: center;" >
-				            <!--    <button style="background-color: #90EE90	!important;" class="btn btn" rel="<?php echo $property_agent_id;?>"  value="" type="button"><?php echo 'Call Now'.' '.$agent['contact']; ?></button> -->
+				               <button style="border-radius: 5px; margin-right: 1em;" class="btn btn-primary" rel="<?php echo $property_agent_id;?>"  value="" type="button" id="enquerybutton"><?php echo $button_submit; ?></button>
 
-<a style="color: white; " class="btn btn-primary" href="tel:<?php echo $agent['contact']; ?>"><?php echo 'Call Now:'.' '.$agent['contact']; ?></a>
+
+				               OR 
+
+				               <a style="color: white; border-radius: 5px; margin-left: 1em; " class="btn btn-primary" href="tel:<?php echo $agent['contact']; ?>"><?php echo 'Call Now:'.' '.$agent['contact']; ?></a>
+							</div>
+													   <div style="text-align: center;" >
+				               <!-- <button style="background-color: #90EE90	!important;" class="btn btn" rel="<?php echo $property_agent_id;?>"  value="" type="button"><?php echo 'Call Now'.' '.$agent['contact']; ?></button> -->
+
+
 							</div>
 						  </div>
 					    </fieldset>

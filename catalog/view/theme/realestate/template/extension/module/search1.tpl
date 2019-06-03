@@ -131,14 +131,36 @@
 
 <div class="row">
 
-	<div class="col-md-6 col-lg-6 col-sm-12">
-			<button style="width: 100%"   class="btn button_search1 text-center" type="button"  data-toggle="collapse" data-target="#demo" ><i class="fa fa-plus-circle"></i> Advanced</button>
-	</div>
+	<div style="display: block;" class="col-md-12 col-lg-12 col-sm-12">
+								<button style="background: #f79b0c none repeat scroll 0 0!important;
+    border: medium none!important;
+    border-radius: 5px!important;
+    color: #fff;
+    font-size: 16px!important;
+    margin: 10px 0 12px!important;
+
+    padding: 1px 15px!important;
+    min-height: 36px;
+
+    float: right;"  class="btn button_search1 text-left" type="button" id="button-filter"><i style="margin-right: 20px;" class="fa fa-search"></i> <?php echo $button_search;?> </button>
+
+
+    			<button style="background: #f79b0c none repeat scroll 0 0!important;
+    border: medium none!important;
+    padding-right: 20px;
+    border-radius: 5px!important;
+    color: #fff;
+    font-size: 16px!important;
+    margin: 10px 0 12px!important;
+        margin-right: 10px !important;
+
+    padding: 1px 15px!important;
+    min-height: 36px;
+    float: right;"   class="btn button_search1 text-center" type="button"  data-toggle="collapse" data-target="#demo" ><i class="fa fa-plus-circle"></i> Advanced</button>
+	</div>		
 	    <div class="col-md-auto">
     </div>
-	<div class="col-md-6 col-lg-6 col-sm-12">
-								<button style="width: 100%"  class="btn button_search1 text-left" type="button" id="button-filter"><i class="fa fa-search"></i> <?php echo $button_search;?> </button>
-	</div>				
+		
 </div>
 
 

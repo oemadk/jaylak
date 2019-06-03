@@ -2186,7 +2186,8 @@ CREATE TABLE `oc_property_agent` (
   `twitter` varchar(250) NOT NULL,
   `pinterest` varchar(250) NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL
+  `date_modified` datetime NOT NULL,
+  `agent_type` VARCHAR(255) NOT NULL DEFAULT 'freelancer'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
